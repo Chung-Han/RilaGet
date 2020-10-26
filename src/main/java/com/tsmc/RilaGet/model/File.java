@@ -1,4 +1,4 @@
-package com.tsmc.RilaGet;
+package com.tsmc.RilaGet.model;
 
 public class File {
 	private String fileName;

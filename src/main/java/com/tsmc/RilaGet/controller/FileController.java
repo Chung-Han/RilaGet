@@ -1,4 +1,4 @@
-package com.tsmc.RilaGet;
+package com.tsmc.RilaGet.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
