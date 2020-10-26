@@ -19,7 +19,7 @@ public class FileController {
 	@RequestMapping(value = "/{file_folder}/{file_name}", method = RequestMethod.GET)
 	public void getFile(@PathVariable("file_folder") String fileFolder, @PathVariable("file_name") String fileName,
 			HttpServletResponse response) {
-		System.out.println("Start download " + fileName + " in " + fileFolder);
+
 		try {
 			// String destLocation = "d:\\";
 			// String src = destLocation.concat("\\" + fileName);
@@ -32,7 +32,8 @@ public class FileController {
 			InputStream is = new FileInputStream(filePath.toString());
 
 			// Try to determine file's content type
-			// response.setContentType("application/jar");
+			response.setContentType("application/force-download");
+			response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
 
 			// copy it to response's OutputStream
 			IOUtils.copy(is, response.getOutputStream());
